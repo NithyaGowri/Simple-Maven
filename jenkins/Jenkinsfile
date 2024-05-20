@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment
+    {
+        PATH = "/E/Maven/apache-maven-3.9.6/bin:$bin"
+    }
     stages {
         stage('Welcome') {
             steps {
@@ -8,8 +12,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                powershell 'mvn -B -DskipTests clean package'
-                //powershell 'mvn clean deploy'
+                //powershell 'mvn -B -DskipTests clean package'
+                powershell 'mvn clean deploy'
                 sleep(20)
             }
         }
