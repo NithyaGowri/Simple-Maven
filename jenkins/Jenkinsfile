@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                //powershell 'mvn -B -DskipTests clean package'
-                powershell 'mvn clean deploy'
+                powershell 'mvn -B -DskipTests clean package'
+                //powershell 'mvn clean deploy'
                 sleep(20)
             }
         }
@@ -18,7 +18,7 @@ pipeline {
                 // job to job
                 build job: 'boolParameter', parameters: [[$class: 'BooleanParameterValue', name: 'bool', value: true]]
                 sleep(5)
-              //  powershell 'mvn test'
+                powershell 'mvn test'
             }
             post {
                 always {
