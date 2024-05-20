@@ -75,7 +75,7 @@
   <distributionManagement>
 		<repository>
 			<id>dev</id>
-			<url>E:\Jenkins_WS</url>
+			<url>file://jarstaging</url>
 		</repository>
 	</distributionManagement>
 </project>
