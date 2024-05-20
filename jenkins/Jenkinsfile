@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment
     {
-        PATH = "/E/Maven/apache-maven-3.9.6/bin:$bin"
+        PATH = "/E/Maven/apache-maven-3.9.6/bin:$PATH"
     }
     stages {
         stage('Welcome') {
