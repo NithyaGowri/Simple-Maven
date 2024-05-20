@@ -30,6 +30,18 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube-Analysis')
+        {
+            environment
+            {
+                def sonarHome = tool 'jenkins-sonar-scanner-tool'
+            }
+            steps
+            {
+                withSonarQubeEnv('sonarqube-server')
+                powershell "${sonarHome}/bin/sonar-scanner"
+            }
+        }
         stage('Deliver') {
             steps {
                 powershell './jenkins/scripts/deliver.sh'
