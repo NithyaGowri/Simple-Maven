@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 // job to job
-                build job: 'boolParameter', parameters: [[$class: 'BooleanParameterValue', name: 'bool', value: true]]
+                //build job: 'boolParameter', parameters: [[$class: 'BooleanParameterValue', name: 'bool', value: true]]
                 sleep(5)
                 powershell 'mvn test'
             }
