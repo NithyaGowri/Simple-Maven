@@ -39,7 +39,9 @@ pipeline {
             steps
             {
                 withSonarQubeEnv('sonarqube-server')
+                {
                 powershell "${sonarHome}/bin/sonar-scanner"
+                }
             }
         }
         stage('Deliver') {
