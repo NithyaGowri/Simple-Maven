@@ -3,6 +3,7 @@ pipeline {
     environment
     {
         PATH = "/E/Maven/apache-maven-3.9.6/bin:$PATH"
+        def sonarHome = tool 'jenkins-sonar-scanner-tool'
     }
     stages {
         stage('Welcome') {
@@ -32,15 +33,13 @@ pipeline {
         }
         stage('SonarQube-Analysis')
         {
-            environment
-            {
-                def sonarHome = tool 'jenkins-sonar-scanner-tool'
-            }
             steps
             {
+                echo "SQ Analysis"
                 withSonarQubeEnv('sonarqube-server')
                 {
-                powershell "${sonarHome}/bin/sonar-scanner -X"
+                    echo "SQ Analysis inside server"
+                    powershell "${sonarHome}/bin/sonar-scanner -X"
                 }
             }
         }
