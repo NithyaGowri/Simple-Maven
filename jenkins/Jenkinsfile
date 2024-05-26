@@ -39,7 +39,8 @@ pipeline {
                 withSonarQubeEnv('sonarqube-server')
                 {
                     echo "SQ Analysis inside server"
-                    powershell "${sonarHome}/bin/sonar-scanner -X"
+                    powershell "${sonarHome}/bin/sonar-scanner -Verbose"
+                    echo "End"
                 }
             }
         }
