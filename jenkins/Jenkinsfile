@@ -40,7 +40,7 @@ pipeline {
             {
                 withSonarQubeEnv('sonarqube-server')
                 {
-                powershell "${sonarHome}/bin/sonar-scanner"
+                powershell "${sonarHome}/bin/sonar-scanner -X"
                 }
             }
         }
