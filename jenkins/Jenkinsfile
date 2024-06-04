@@ -59,7 +59,7 @@ pipeline {
                     "files": [
                     {
                     "pattern": "jarstaging/(*)",
-                    "target": "ngk-libs-snapshot-local/{1}",
+                    "target": "ngk-libs-release-local/{1}",
                     "flat": "false",
                     "props": "${properties}",
                     "exclusions": ["*.sha1", "*.md5"]
