@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Welcome') {
             steps {
-                powershell 'ECHO WELCOME MASTER BRANCH'
+                powershell 'ECHO WELCOME DEVELOPMENT BRANCH'
             }
         }
         stage('Build') {
